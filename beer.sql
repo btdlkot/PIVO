@@ -28,4 +28,4 @@ create TABLE evaluations (
     CONSTRAINT evaluation_unique UNIQUE(user_id, beer_id),
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (beer_id) REFERENCES beers(id) ON DELETE CASCADE
-)
+);
