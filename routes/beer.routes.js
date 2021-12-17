@@ -1,11 +1,11 @@
 const Router = require('express')
 const router = Router()
-const beerController = require('../controller/beer.controller')
+const BeerController = require('../controller/beer.controller')
 
-router.post('/beer', beerController.createbeer)
-router.get('/beer', beerController.getbeer)
-router.get('/beer/:id', beerController.getOnebeer)
-router.put('/beer', beerController.updatebeer)
-router.delete('/beer/:id', beerController.deletebeer)
+router.post('/beer', BeerController.createBeer)
+router.get('/beer', BeerController.getBeer)
+router.get('/beer/:id', BeerController.getOneBeer)
+router.put('/beer', BeerController.updateBeer)
+router.delete('/beer/:id', BeerController.deleteBeer)
 
 module.exports = router

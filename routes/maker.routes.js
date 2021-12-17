@@ -1,11 +1,11 @@
 const Router = require('express')
 const router = Router()
-const makerController = require('../controller/maker.controller')
+const MakerController = require('../controller/maker.controller')
 
-router.post('/maker', makerController.createMaker)
-router.get('/maker', makerController.getMaker)
-router.get('/maker/:id', makerController.getOneMaker)
-router.put('/maker', makerController.updateMaker)
-router.delete('/maker/:id', makerController.deleteMaker)
+router.post('/maker', MakerController.createMaker)
+router.get('/maker', MakerController.getMaker)
+router.get('/maker/:id', MakerController.getOneMaker)
+router.put('/maker', MakerController.updateMaker)
+router.delete('/maker/:id', MakerController.deleteMaker)
 
 module.exports = router
