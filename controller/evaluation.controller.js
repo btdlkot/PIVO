@@ -37,6 +37,16 @@ class EvaluationController {
             console.log(error.message)
         }
     }
+
+    async commentsAboutBeer (req, res){
+        const id = req.params.id
+        try {
+            const evaluation = await db.query('SELECT users.name, evaluations.evaluation, evaluations.comment FROM evaluations JOIN users ON users.id = evaluations.user_id where beer_id = $1', [id])
+            res.json(evaluation.rows)
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
 }
 
 module.exports = new EvaluationController

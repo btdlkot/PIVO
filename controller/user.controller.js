@@ -3,12 +3,12 @@ class UserController {
     async createUser (req, res){
         const {name, surname, mail} = req.body
         try {
-            const newuser = await db.query(
+            const newUser = await db.query(
                 'INSERT INTO users (name, surname, mail) values ($1, $2, $3) RETURNING *', 
                 [name, surname, mail]
             )
             console.log(name, surname, mail)
-            res.json(newuser.rows[0])
+            res.json(newUser.rows[0])
         } catch (error) {
             console.log(error.message)
         }
